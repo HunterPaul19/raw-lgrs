@@ -49,6 +49,9 @@ regression.fit(X, y)
 print(f"True slope: {true_slope}, Estimated slope: {regression.slope}")
 print(f"True intercept: {true_intercept}, Estimated intercept: {regression.intercept}")
 
+r_squared = 1 - (np.sum((y - regression.predict(X)) ** 2) / np.sum((y - np.mean(y)) ** 2))
+
+print(f"R-squared: {r_squared}")
 
 # Plot MSE
 plt.figure(figsize=(10, 5))
